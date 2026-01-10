@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Sonam - Developer Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        body {
+            background-color: rgb(0, 0, 33);
+            color: white;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 80px;
+            background-color: rgb(18, 18, 62);
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            list-style: none;
+            margin: 0 23px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+        }
+
+        nav ul li a:hover {
+            color: rgb(91, 91, 151);
+            font-size: 18px;
+        }
+
+        .left {
+            font-size: 32px;
+        }
+
+        #firstsection {
+            display: flex;
+            justify-content: space-around;
+            margin: 50px 0;
+            align-items: center;
+        }
+
+        .leftsection {
+            width: 35%;
+            font-size: 35px;
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        .rightsection {
+            width: 30%;
+        }
+
+        .rightsection img {
+            width: 80%;
+            margin: 60px;
+        }
+
+        .purple {
+            color: rgb(186, 74, 243);
+        }
+
+        #about {
+            padding: 2rem;
+            margin: 1rem;
+            height: 750px;
+            background: #fff;
+            border-radius: 8px;
+            color: black;
+        }
+
+        .about-content {
+            margin-top: 10px;
+            margin-left: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 8rem;
+        }
+
+        .profile-pic {
+            width: 300px;
+            height: 500px;
+            object-fit: cover;
+            /* border-radius: 50%; */
+            border: 2px solid #333;
+        }
+
+        .about-text {
+            width: 50%;
+            min-width: 250px;
+            line-height: 2;
+            font-size: 20px;
+            font-weight: 200px;
+            margin-top: 20px;
+            margin-left: 50px;
+            color: rgb(91, 91, 151);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        #skills {
+            min-height: 100vh;
+            padding: 48px 16px;
+            background: rgb(0, 0, 33);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #skills h2 {
+            font-size: 45px;
+            margin-bottom: 50px;
+            color: white;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 32px;
+            width: 90%;
+            max-width: 1000px;
+        }
+
+        .skill-card {
+            background: white;
+            border-radius: 12px;
+            padding: 32px 16px;
+            text-align: center;
+            box-shadow: 0 8px 16px rgb(0, 0, 0);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .skill-card:hover {
+            background-color: rgb(221, 152, 152);
+            box-shadow: 0 12px 24px rgb(0, 0, 0);
+        }
+
+        .skill-card span {
+            font-size: 40px;
+            display: block;
+            margin-bottom: 16px;
+        }
+
+        .skill-card h3 {
+            font-size: 18px;
+            color: #333;
+        }
+
+        #projects {
+            background-color: #fff;
+            color: #000;
+            text-align: center;
+            padding: 60px 20px;
+            border-radius: 8px;
+        }
+
+        #projects h2 {
+            font-size: 42px;
+            color: rgb(0, 0, 33);
+            margin-bottom: 50px;
+        }
+
+        .project-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 70px;
+            row-gap: 50px;
+        }
+
+        .project-box {
+            background-color: rgb(0, 0, 33);
+            color: white;
+            border-radius: 10px;
+            width: 300px;
+            padding: 30px 25px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .project-box:hover {
+            background-color: rgb(206, 116, 236);
+            transform: translateY(-8px);
+        }
+
+        .project-box h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        .project-box p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .project-btn {
+            display: inline-block;
+            background-color: rgb(186, 74, 243);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .project-btn:hover {
+            background-color: rgb(150, 50, 210);
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        input,
+        textarea {
+            margin-bottom: 1rem;
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            padding: 0.7rem;
+            background: #333;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        /* Contact Section */
+        .contact {
+            background-color: rgb(0, 0, 33);
+            padding: 60px 10%;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .contact p {
+            color: white;
+            margin-bottom: 40px;
+        }
+
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .contact-form {
+            background: #fff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            flex: 1 1 350px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .contact-form h1 {
+            color: #0097a7;
+            text-align: left;
+        }
+
+        .contact-form label {
+            text-align: left;
+            font-weight: bold;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-family: inherit;
+        }
+
+        .contact-form button {
+            background-color: #00bcd4;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .contact-form button:hover {
+            background-color: #0097a7;
+        }
+
+        .contact-info {
+            text-align: left;
+            flex: 1 1 250px;
+            max-width: 300px;
+        }
+
+        .contact-info h2 {
+            margin-bottom: 10px;
+            color: white;
+        }
+
+        .contact-info p {
+            margin: 8px 0;
+            color: white;
+        }
+
+        .socials a {
+            display: inline-block;
+            margin-right: 10px;
+            color: #00bcd4;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .socials a:hover {
+            color: #0097a7;
+        }
+
+        @media (max-width: 768px) {
+            .contact-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .contact-info {
+                text-align: center;
+            }
+        }
+
+        footer {
+            padding: 2rem;
+            margin: 1rem;
+            height: 100px;
+            background: #fff;
+            border-radius: 8px;
+            color: black;
+            list-style: none;
+
+        }
+
+        footer {
+            padding: 2rem 1rem;
+            background: #fff;
+            border-radius: 8px;
+            color: black;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container ul {
+            display: flex;
+            justify-content: center;
+            margin-top: -10px;
+            gap: 30px;
+            padding: 0;
+        }
+
+        .container ul li {
+            list-style: none;
+        }
+
+        .container ul li a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .container ul li a:hover {
+            color: rgb(14, 145, 210);
+            font-size: 18px;
+        }
+
+        .end {
+            margin-top: 15px;
+            text-align: center;
+            color: black;
+        }
+
+        @media (max-width: 600px) {
+            .container ul {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="left">Sonam's Portfolio</div>
+            <div class="right">
+                <ul>
+                    <li><a href="#home">Home</li></a>
+                    <li><a href="#about">About</li></a>
+                    <li><a href="#skills">Skills</li></a>
+                    <li><a href="#projects">Projects</li></a>
+                    <li><a href="#contact">Contact me</li></a>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="firstsection">
+            <div class="leftsection">
+                Hi, My name is <span class="purple">Sonam</span>
+                <div>and I am a passionate</div>
+                <div>Web Developer</div>
+            </div>
+            <div class="rightsection">
+                <img src="img/bg.png" alt="Image not loaded">
+            </div>
+        </section>
+        <br><br><br>
+        <section id="about">
+            <h1 style="font-size: 50px;">About Me</h1><br><br>
+            <div class="about-content">
+                <img src="img/pic1.jpeg" alt="Your Photo" class="profile-pic" />
+                <div class="about-text">
+                    <p>Hi, I'm <strong>Sonam</strong>, an aspiring web developer who recently started
+                        learning HTML, CSS, and JavaScript.</p>
+                    <p>I enjoy experimenting with code and building simple web pages to sharpen my skills.My goal is to
+                        become a full-stack developer and create websites that are both beautiful and
+                        functional. I'm currently working on small projects to practice what I’ve learned.</p>
+                    <p>Thanks for visiting my portfolio — I’m excited to share my progress and grow as a developer!</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2>My Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <span>📝</span>
+                    <h3>MS Word</h3>
+                </div>
+                <div class="skill-card">
+                    <span>📊</span>
+                    <h3>MS Excel</h3>
+                </div>
+                <div class="skill-card">
+                    <span>📽️</span>
+                    <h3>MS PowerPoint</h3>
+                </div>
+                <div class="skill-card">
+                    <span>🌐</span>
+                    <h3>HTML</h3>
+                </div>
+                <div class="skill-card">
+                    <span>🎨</span>
+                    <h3>CSS</h3>
+                </div>
+                <div class="skill-card">
+                    <span>⚙️</span>
+                    <h3>JavaScript</h3>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>My Projects</h2>
+
+            <div class="project-container">
+                <div class="project-box">
+                    <h3>Calculator</h3>
+                    <p>A responsive calculator made with HTML, CSS, and JavaScript. It performs basic arithmetic operations with a user-friendly design.</p>
+                    <a href="project1.html" class="project-btn">View Project</a>
+                </div>
+
+                <div class="project-box">
+                    <h3>To-do List</h3>
+                    <p>A simple to-do list app built using HTML, CSS, and JavaScript where users can add, mark, and remove tasks easily.</p>
+                    <a href="project2.html" class="project-btn">View Project</a>
+                </div>
+
+                <div class="project-box">
+                    <h3>Student Registration</h3>
+                    <p> A student registration form created with HTML, CSS, and JavaScript where users can input student details.</p>
+                    <a href="project3.html" class="project-btn">View Project</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <h2>Contact Me</h2>
+            <p>Feel free to reach out — I’d love to connect with you!</p>
+
+            <div class="contact-container">
+                <form class="contact-form">
+                    <h1>Send Me a Message</h1>
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" placeholder="Enter your name" required>
+
+                    <label for="email">Your Email</label>
+                    <input type="email" id="email" placeholder="Enter your email" required>
+
+                    <label for="message">Your Message</label>
+                    <textarea id="message" rows="5" placeholder="Write your message here..." required></textarea>
+
+                    <button type="submit">Send Message</button>
+                </form>
+
+
+                <div class="contact-info">
+                    <h2>Get in Touch</h2>
+                    <br>
+                    <p><strong>Email:</strong> sonamjassal2005@gmail.com</p>
+                    <br>
+                    <p><strong>Location:</strong> Haryana, India</p>
+                    <br>
+                    <div class="socials">
+                        <a href="https://instagram.com/arcane_2103">Instagram</a>
+                        <!-- <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a> -->
+                        <a href="https://t.me/@theonly_sonam">Telegram</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <div class="container">
+                <ul>
+                    <li><a href="#home">Home</li></a>
+                    <li><a href="#about">About</li></a>
+                    <li><a href="#skills">Skills</li></a>
+                    <li><a href="#projects">Projects</li></a>
+                    <li><a href="#contact">Contact me</li></a>
+                </ul>
+            </div>
+            <div class="end">
+                <p>&copy; 2025 Sonam. All rights reserved.</p>
+            </div>
+        </footer>
+    </main>
+</body>
+
+</html>
